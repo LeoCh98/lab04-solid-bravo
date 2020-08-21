@@ -12,7 +12,7 @@ public:
 
     Game(const std::string &name, double price, double tax);
 
-    Game(const std::string &name, double price, double itemWeight, const std::string &productDimensions);
+    Game(const std::string &name, double price, const std::string &productDimensions);
 
     const std::string &getName() const;
 
@@ -26,9 +26,9 @@ public:
 
     void setTax(double tax);
 
-    double getItemWeight() const;
+    //double getItemWeight() const;
 
-    void setItemWeight(double itemWeight);
+    //void setItemWeight(double itemWeight);
 
     const std::string &getProductDimensions() const;
 
@@ -38,13 +38,13 @@ public:
 
     void save(const std::string &filename);
 
-    std::string toString();
+    virtual std::string toString();
 private:
     std::string name;
     double price;
     double tax;
-    double itemWeight;
-    std::string productDimensions;
+    //double itemWeight;
+    //std::string productDimensions;
 };
 
 
