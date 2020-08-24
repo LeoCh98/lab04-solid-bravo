@@ -8,7 +8,6 @@
 
 class StreamingGame: public Game {
 private:
-    std::string gameType;
 
 public:
     StreamingGame();
