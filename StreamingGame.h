@@ -12,13 +12,10 @@ private:
 public:
     StreamingGame();
 
-    StreamingGame(const std::string &name, double price, double tax, const std::string &gameType);
+    StreamingGame(const std::string &name, double price, double tax);
 
     virtual ~StreamingGame();
 
-    const std::string &getGameType() const;
-
-    void setGameType(const std::string &gameType);
 
     std::string toString() override;
 
