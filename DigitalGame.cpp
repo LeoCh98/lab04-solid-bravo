@@ -22,6 +22,6 @@ void DigitalGame::setItemWeight(double itemWeight) {
 std::string DigitalGame::toString() {
     std::stringstream output;
     output<<Game::toString()
-    <<"Item weight: " << getItemWeight() << std::endl;
+    <<"\nItem weight: " << getItemWeight() <<"Gb"<< std::endl;
     return output.str();
 }

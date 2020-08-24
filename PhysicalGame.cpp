@@ -30,7 +30,7 @@ void PhysicalGame::setItemWeight(double itemWeight) {
 std::string PhysicalGame::toString() {
     std::stringstream output;
     output<<Game::toString()
-    <<"Product Dimensions: "<< getProductDimensions1()<< std::endl
+    <<"\nProduct Dimensions: "<< getProductDimensions1()<< std::endl
     <<"Item weight: " << getItemWeight() << std::endl;
     return output.str();
 }
