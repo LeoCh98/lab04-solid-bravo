@@ -19,7 +19,7 @@ public:
 
     void setItemWeight(double itemWeight);
 
-    std::string toString();
+    std::string toString() override;
 };
 
 
