@@ -10,9 +10,7 @@ Game::Game() {}
 
 Game::Game(const std::string &name, double price, double tax) : name(name), price(price), tax(tax) {}
 
-Game::Game(const std::string &name, double price, double itemWeight,
-           const std::string &productDimensions) : name(name), price(price), itemWeight(itemWeight),
-           productDimensions(productDimensions) {}
+Game::Game(const std::string &name, double price) : name(name), price(price){}
 
 const std::string &Game::getName() const {
     return name;
@@ -38,30 +36,15 @@ void Game::setTax(double tax) {
     Game::tax = tax;
 }
 
-double Game::getItemWeight() const {
-    return itemWeight;
-}
-
-void Game::setItemWeight(double itemWeight) {
-    Game::itemWeight = itemWeight;
-}
-
-const std::string &Game::getProductDimensions() const {
-    return productDimensions;
-}
-
-void Game::setProductDimensions(const std::string &productDimensions) {
-    Game::productDimensions = productDimensions;
-}
-
 double Game::calculatePriceWithTax() {
-    return getPrice() + (getPrice() * getTax());
+    return (price * tax) + price;
 }
 
 /**
  * Save the information into a text file
  * @param filename the name of the text file
  */
+
 void Game::save(const std::string &filename) {
     std::ofstream ofs (filename, std::ofstream::out);
 
@@ -74,10 +57,7 @@ std::string Game::toString() {
     std::ostringstream output;
     output << std::fixed << std::setprecision(2);
     output << "Game Name: " << getName()
-           << "\nItem Weight: " << getItemWeight()
-           << "\nProduct Dimensions: " << getProductDimensions()
            << "\nPrice: $" << getPrice()
            << "\nPrice with Tax: $" << calculatePriceWithTax();
-
     return output.str();
 }

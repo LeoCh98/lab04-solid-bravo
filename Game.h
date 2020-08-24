@@ -12,7 +12,7 @@ public:
 
     Game(const std::string &name, double price, double tax);
 
-    Game(const std::string &name, double price, const std::string &productDimensions);
+    Game(const std::string &name, double price);
 
     const std::string &getName() const;
 
@@ -25,14 +25,6 @@ public:
     double getTax() const;
 
     void setTax(double tax);
-
-    //double getItemWeight() const;
-
-    //void setItemWeight(double itemWeight);
-
-    const std::string &getProductDimensions() const;
-
-    void setProductDimensions(const std::string &productDimensions);
 
     double calculatePriceWithTax();
 
