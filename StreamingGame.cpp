@@ -7,7 +7,7 @@
 StreamingGame::StreamingGame() {}
 
 StreamingGame::StreamingGame(const std::string &name, double price, double tax) : Game(
-        name, price, tax), {}
+        name, price, tax) {}
 
 StreamingGame::~StreamingGame() {
 
