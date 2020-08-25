@@ -21,6 +21,7 @@ private:
 
     list<DigitalGame *>  digitalGam;
     list<PhysicalGame*> physicalGam;
+    list<StreamingGame*> streamingGam;
     int numero;
 
 
@@ -34,6 +35,7 @@ public:
     void setDigitalGames(DigitalGame*);
     void setPhysicalGame(PhysicalGame*);
 
+    void setStreamingGame(StreamingGame*);
 
 
     void loadGames() override;

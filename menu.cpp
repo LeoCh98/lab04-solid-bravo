@@ -27,11 +27,19 @@ void Menu::loadGames() {
     Game* Dg2= new DigitalGame ("Grand Thief Auto: San Andreas (PC)",25.20,80);
     Dg2->setTax(0.05);
 
+    Game* Strg1= new StreamingGame (" Grand Thief Auto: San Andreas (PC.Streaming)",25.20,0.05);
+
+
+    Game* Strg2= new StreamingGame ("Call of Duty: Black Ops 4 (PC.Streaming)",24.66,0.05);
+    Strg2->setTax(0.05);
+
+
     setDigitalGames(dynamic_cast<DigitalGame *>(Dg1));
     setDigitalGames(dynamic_cast<DigitalGame *>(Dg2));
     setPhysicalGame(dynamic_cast<PhysicalGame *>(Pg1));
     setPhysicalGame(dynamic_cast<PhysicalGame *>(Pg2));
-
+    setStreamingGame(dynamic_cast<StreamingGame*>(Strg1));
+    setStreamingGame(dynamic_cast<StreamingGame*>(Strg2));
 
 
 
@@ -45,6 +53,9 @@ void Menu::setDigitalGames(DigitalGame * digitalGame) {
 
 void Menu::setPhysicalGame(PhysicalGame * physicalGame)  {
     physicalGam.push_back(physicalGame);
+}
+void Menu::setStreamingGame(StreamingGame * streamingGame) {
+    streamingGam.push_back(streamingGame);
 }
 
 
@@ -79,6 +90,18 @@ string Menu::toString() {
         s<<it.operator*()->toString()<<endl;
         cont++;
     }
+
+    cont=0;
+
+    s<<"los juegos de Streaming:"<<endl;
+    for(auto it= streamingGam.cbegin(); it!= streamingGam.cend();it++)
+    {
+        s<<cont<<endl;
+
+        s<<it.operator*()->toString()<<endl;
+        cont++;
+    }
+
 
 
 
